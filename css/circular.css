@@ -1,0 +1,84 @@
+/* Loader Overlay */
+.loader-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(175,200,204,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Loader Card */
+.loader-card{
+  background:#fff;
+  padding:30px 40px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 20px 45px rgba(0,0,0,.3);
+}
+
+/* Circle Loader */
+.circle-loader{
+  position: relative;
+  width:90px;
+  height:90px;
+  margin: auto;
+}
+
+.circle-loader svg{
+  width:100%;
+  height:100%;
+  transform: rotate(-90deg);
+}
+
+.circle-loader circle{
+  fill:none;
+  stroke-width:7;
+  cx:45;
+  cy:45;
+  r:38;
+}
+
+/* Background ring */
+.circle-loader .bg{
+  stroke:#d1e7eb;
+}
+
+/* Progress ring */
+.circle-loader .progress{
+  stroke:#22c55e;
+  stroke-dasharray:239;
+  stroke-dashoffset:239;
+  animation: loading 5s linear infinite;
+}
+
+/* Text inside */
+.loader-text{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  font-size:14px;
+  color:#14532d;
+}
+
+/* Animation */
+@keyframes loading{
+  0%{ stroke-dashoffset:239; }
+  50%{ stroke-dashoffset:120; }
+  100%{ stroke-dashoffset:239; }
+}
+
+.loader-overlay{
+  animation: hideLoader 2.5s forwards;
+}
+
+@keyframes hideLoader{
+  0%{ opacity:1; visibility:visible; }
+  90%{ opacity:1; }
+  100%{ opacity:0; visibility:hidden; }
+}
+

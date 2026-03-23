@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quiz Result</title>
+<link rel="stylesheet" href="css/result.css">
+</head>
+
+<body>
+    <div class="layout">
+  
+    <div class="topbar">
+    <div class="logo">QuizMaster</div>
+    <div class="nav-links">
+    <a href="selection.html">Home</a>
+    <!-- <a href="instruction.html">instruction</a> -->
+    <a href="result.html">Result Page</a>
+    <a href="progress.html">your progress</a>
+    </div>
+    <div class="user-area">
+        <span>Guest User</span>
+        <a href="index.html"><button class="logout-btn">Logout</button></a>
+    </div>
+</div>
+
+<main class="content">
+<div class="result-card">
+
+    <h1 class="title">Quiz Result</h1>
+    <p class="subtitle">Congratulations! You have completed the quiz </p>
+
+    <div class="score-circle">
+    <span id="scoreText"></span>
+    <small>Score</small>
+</div>
+
+<div class="stats">
+    <div class="stat correct">
+        <h2 id="correctCount"></h2>
+        <p>Correct</p>
+    </div>
+
+    <div class="stat wrong">
+        <h2 id="wrongCount"></h2>
+        <p>Wrong</p>
+    </div>
+
+    <div class="stat skip">
+        <h2 id="skipCount"></h2>
+        <p>Unanswered</p>
+    </div>
+</div>
+
+    <!-- Result Message -->
+    <div class="message">
+        <p>Great job! Keep practicing to get a perfect score 💚</p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="actions">
+        <a href="qupanel.html">Retry Quiz</a>
+        <a href="selection.html" class="secondary">Home</a>
+    </div>
+
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>© 2026 QuizMaster. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Help</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+
+</div>
+</body>
+<script>
+  const score = localStorage.getItem("score");
+  const total = localStorage.getItem("total");
+  const correct = localStorage.getItem("correct");
+  const wrong = localStorage.getItem("wrong");
+  const unanswered = localStorage.getItem("unanswered");
+
+  document.getElementById("scoreText").innerText = `${score} / ${total}`;
+  document.getElementById("correctCount").innerText = correct;
+  document.getElementById("wrongCount").innerText = wrong;
+  document.getElementById("skipCount").innerText = unanswered;
+
+  // Optional message change
+  const msg = document.querySelector(".message p");
+  if (score == total) {
+    msg.innerText = "Perfect score! Outstanding performance";
+  } else if (score >= total / 2) {
+    msg.innerText = "Great job! Keep practicing to improve 💚";
+  } else {
+    msg.innerText = "Don't worry! Practice makes perfect ";
+  }
+
+</script>
+
+</html>

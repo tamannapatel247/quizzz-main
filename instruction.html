@@ -1,0 +1,138 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Quiz </title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>Quiz Instructions</h1>
+        <p class="subtitle">Read carefully before starting</p>
+
+        <div class="info-box" style="font-size:20px;">
+            • Total Questions:20<br>
+            <br>
+            • In easy question 10 second for each question <br>
+              In Medium question 20 second for each question and <br>
+              In hard question 20 Minutes for overall quiz. <br>
+              <br>
+            • Each question carries 1 mark<br>
+            <br>
+            • No negative marking<br>
+            <br>
+            • After go for the next question you also visit privious question and modify thw question if time remaining <br>
+            <br>
+            • If time complite for privious question you can visit the question but not modify it.<br>
+            <br>
+            • If time out for one or overall Questions Questions or quiz submit autometally.<br>
+            <br>
+            • If you don't tick any question then marks count 0 for these question.<br>
+            <br>
+            • After submit the quiz you can see result also.
+        </div>
+
+        <a href="quiz.html" class="btn primary">Start Quiz</a>
+    </div>
+</div>
+
+
+
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quiz Instructions</title>
+<link rel="stylesheet" href="css/info.css">
+</head>
+<body>
+  <div class="layout">
+
+  <div class="topbar">
+    <div class="logo">QuizMaster</div>
+    <div class="nav-links">
+    <a href="selection.html">Home</a>
+    <a href="instruction.html">instruction</a>
+    <a href="result.html">Result Page</a>
+    </div>
+    <div class="user-area">
+        <span>Guest User</span>
+        <a href="index.html"><button class="logout-btn">Logout</button></a>
+    </div>
+</div>
+
+<div class="content">
+<div class="page">
+<div class="instruction-wrapper ">
+  <div class="instruction-card">
+    <h2>Quiz Instructions</h2>
+    <p class="subtitle">Read carefully before starting</p>
+
+    <div class="info-grid">
+      <div>
+        <h4>General Rules</h4>
+        <ul>
+          <li>Total Questions: 20</li>
+          <li>Each question carries 1 mark</li>
+          <li>No negative marking</li>
+          <li>Unattempted question = 0 marks</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Time Rules</h4>
+        <ul>
+          <li>Easy: 10 sec per question</li>
+          <li>Medium: 20 sec per question</li>
+          <li>Hard: 20 minutes overall</li>
+        </ul>
+      </div>
+    </div>
+
+    <ul class="bottom-rules">
+      <li>You can revisit and modify answers if time remains</li>
+      <li>Once time is over, answers cannot be modified</li>
+      <li>Quiz auto-submits when time completes</li>
+    </ul> <br>
+    <div id="info"></div>
+
+    <div class="btn-center">
+    <a href="qupanel.html"><button class="start-btn">Start Quiz</button></a>
+    </div>
+  
+  </div>
+</div>
+</div>
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>© 2026 QuizMaster. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Help</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+<script>
+const subject = localStorage.getItem("subject");
+const level = localStorage.getItem("level");
+
+console.log(subject, level);
+
+// document.getElementById("info").innerHTML =
+//     `Subject: <b>${subject}</b><br>Difficulty: <b>${level}</b>`;
+</script>
+
+</html>

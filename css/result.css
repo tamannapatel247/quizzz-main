@@ -1,0 +1,259 @@
+html, body {
+    height: 100%;
+}
+
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;                  /* pushes footer down */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body{
+    background:#afc8cc;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.result-card{
+    width: 100%;
+    max-width: 550px;
+    margin: auto;
+}
+
+/* Result Card */
+.result-card{
+    width:550px;
+    background:#ffffff;
+    padding:30px;
+    border-radius:20px;
+    color:#060908;
+    text-align:center;
+    box-shadow:0 20px 45px rgba(0,0,0,.4);
+}
+
+/* Headings */
+.title{
+    margin-bottom:10px;
+    font-size:38px;
+}
+
+.subtitle{
+    font-size:18px;
+    color:#000702;
+    margin-bottom:20px;
+}
+
+/* Score Circle */
+.score-circle{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    border:6px solid #22c55e;
+    margin:0 auto 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.score-circle small{
+    font-size:14px;
+    font-weight:normal;
+}
+
+/* Stats */
+.stats{
+    display:flex;
+    justify-content:space-between;
+    margin:26px 0;
+}
+
+.stat{
+    width:30%;
+    background:#dcedef;
+    padding:15px 5px;
+    border-radius:12px;
+}
+
+.stat h2{
+    margin:0;
+}
+
+.correct h2{ color:#22c55e; }
+.wrong h2{ color:#ef4444; }
+.skip h2{ color:#facc15; }
+
+/* Message */
+.message{
+    background:#dcedef;;
+    padding:16px;
+    border-radius:12px;
+    margin-bottom:26px;
+    font-size:18px;
+}
+
+/* Buttons */
+.actions{
+    display:flex;
+    justify-content:space-between;
+}
+
+.actions a{
+    width:48%;
+    padding:10px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    background:#33b38c;
+    color:#ffffff;
+    font-size:20px;
+}
+
+.actions .secondary{
+    background:#33b38c;
+    color:#ffffff;
+}
+
+/* Top Bar */
+.topbar {
+    height: 60px;
+    background: #f5f8fb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-weight: 600;
+    color: #1e3a5f;
+    gap: 15px;
+    text-decoration: none;
+    font-size: 25px;
+}
+/* .logo1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e3a5f;
+    display: flex;
+    gap: 50px;
+    text-decoration: none;
+} */
+.nav-links {
+    display: flex;
+    gap: 50px;
+    justify-content: flex-end;
+}
+.nav-links a {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e3a5f;
+    text-decoration: none;  /* remove underline */
+}
+
+.nav-links a:hover {
+    color: #0f2a45;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logout-btn {
+    padding: 6px 12px;
+    border: none;
+    background: #1e88e5;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background-color: #1e3a5f;
+    color: #ffffff;
+    padding: 15px 40px;
+    margin-top: auto; 
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-links a {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+}
+
+.footer-content p {
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+
+  .title {
+    font-size: 28px;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .stat {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .actions a {
+    width: 100%;
+    text-align: center;
+  }
+}

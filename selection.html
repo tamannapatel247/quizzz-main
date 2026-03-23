@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Setup</title>
+    <link rel="stylesheet" href="css/selection.css">
+</head>
+<body>
+    <div class="layout">
+
+<!-- Top Bar -->
+<div class="topbar">
+    <div class="logo">QuizMaster</div>
+    <div class="nav-links">
+    <a href="selection.html">Home</a>
+    <!-- <a href="instruction.html">instruction</a> -->
+    <a href="result.html">Result Page</a>
+    <a href="progress.html">Your progress</a>
+    </div>
+    <div class="user-area">
+        <span>Guest User</span>
+        <a href="index.html" class="logout-btn">logout</a>
+    </div>
+</div>
+
+<!-- Main Page -->
+  <main class="content">
+<div class="page">
+    <h1 class="title">Customize Your Quiz</h1>
+
+    <!-- Topic -->
+    <div class="box">
+        <h3>Choose Topic</h3>
+        <div class="option-grid">
+           <div class="option-grid">
+    <button type="button" class="option-card" data-subject="HTML">HTML</button>
+    <button type="button" class="option-card" data-subject="CSS">CSS</button>
+    <button type="button" class="option-card" data-subject="JAVA">JAVA</button>
+    <button type="button" class="option-card" data-subject="JAVASCRIPT">JAVA SCRIPT</button>
+    <button type="button" class="option-card" data-subject="PHP">PHP</button>
+    <button type="button" class="option-card" data-subject="PYTHON">PYTHON</button>
+    <button type="button" class="option-card" data-subject="C#">C#</button>
+    <button type="button" class="option-card" data-subject="DBMS">DBMS</button>
+</div>
+       </div>
+    </div>
+
+    <!-- Difficulty -->
+    <div class="box">
+        <h3>Choose Difficulty</h3>
+        <div class="option-row">
+            <button type="button" class="option-card" data-level="Easy">Easy<br><small>Beginner friendly</small></button>
+            <button type="button" class="option-card" data-level="Medium">Medium<br><small>Moderate challenge</small></button>
+            <button type="button" class="option-card" data-level="Medium">Hard<br><small>Expert level</small></button>
+        </div>
+    </div>
+
+    <!-- Start -->
+    <div class="start-area">
+        <button class="start-btn" id="nextBtn" onclick="goNext()">NEXT</button>
+    </div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>© 2026 QuizMaster. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Help</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    let selectedSubject = "";
+    let selectedLevel = "";
+
+    // SUBJECT SELECTION
+    document.querySelectorAll("[data-subject]").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll("[data-subject]").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            selectedSubject = btn.dataset.subject;
+
+            localStorage.setItem("subject", selectedSubject);
+            console.log("Subject:", selectedSubject);
+        });
+    });
+
+    // DIFFICULTY SELECTION
+    document.querySelectorAll("[data-level]").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll("[data-level]").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            selectedLevel = btn.dataset.level;
+
+            localStorage.setItem("level", selectedLevel);
+            console.log("Level:", selectedLevel);
+        });
+    });
+
+    // NEXT BUTTON
+    document.getElementById("nextBtn").addEventListener("click", () => {
+        if (!selectedSubject || !selectedLevel) {
+            alert("Please select subject and difficulty level");
+            return;
+        }
+        window.location.href = "instruction.html";
+    });
+
+});
+</script>
+
+
+
+</html>

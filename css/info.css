@@ -1,0 +1,249 @@
+html, body {
+    height: 100%;
+}
+
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;                  /* pushes footer down */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/*  Light green background */
+body {
+  min-height: 100vh;
+  background: #afc8cc;
+}
+.page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  Wrapper */
+.instruction-wrapper {
+  width: 100%;
+  padding: 20px;
+}
+
+/*  Card */
+.instruction-card {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  background: #ffffff;
+  font-size:20px;
+  padding: 35px 45px;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Headings */
+.instruction-card h2 {
+  text-align: center;
+  color: #1f4d3a;
+  font-size: 28px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 6px;
+  color: #5f8f7c;
+  margin-bottom: 30px;
+}
+
+/*  Grid layout */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  font-size:22px;
+}
+
+.info-grid h4 {
+  color: #2e7d62;
+  margin-bottom: 10px;
+}
+
+/*  Lists */
+ul {
+  padding-left: 20px;
+  line-height: 1.8;
+  color: #344f44;
+}
+
+/* 📌 Bottom rules */
+.bottom-rules {
+  margin-top: 25px;
+   font-size:22px;
+}
+
+/* Button */
+.start-btn {
+  padding: 14px 60px;
+    background: #33b38c;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 6px 15px rgba(30,136,229,0.3);
+    transition: 0.3s;
+    border: 2px solid #118e68;
+}
+.btn-center{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+.start-btn:hover {
+  background: #256b54;
+}
+
+/*  Responsive */
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Top Bar */
+.topbar {
+    height: 60px;
+    background: #f5f8fb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-weight: 600;
+    color: #1e3a5f;
+    gap: 15px;
+    text-decoration: none;
+    font-size: 25px;
+}
+/* .logo1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e3a5f;
+    display: flex;
+    gap: 50px;
+    text-decoration: none;
+} */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e3a5f;
+    text-decoration: none;  /* remove underline */
+}
+
+.nav-links a:hover {
+    color: #0f2a45;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logout-btn {
+    padding: 6px 12px;
+    border: none;
+    background: #1e88e5;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background-color: #1e3a5f;
+    color: #ffffff;
+    padding: 15px 40px;
+    margin-top: auto; 
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-links a {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+}
+
+.footer-content p {
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+  .instruction-card {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .instruction-card {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .instruction-card h2 {
+    font-size: 22px;
+  }
+
+  .info-grid,
+  .bottom-rules {
+    font-size: 16px;
+  }
+
+  .start-btn {
+    width: 100%;
+    padding: 14px;
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Create Account</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>Create Account</h1>
+        <p class="subtitle">Fill in the details to get started</p>
+
+        <input type="text" id="fname" class="input" placeholder="First Name">
+        <input type="text" id="lname" class="input" placeholder="Last Name">
+        <input type="email" id="email" class="input" placeholder="Email">
+        <input type="password" id="password" class="input" placeholder="Password">
+        <input type="password" id="confirm" class="input" placeholder="Confirm Password">
+
+        <button class="btn primary" onclick="signup()">Create Account</button>
+
+        <p class="link-text">
+            Already have an account?
+            <a href="sign_in.html">Sign In</a>
+        </p>
+    </div>
+</div>
+
+<script>
+function signup() {
+    let fname = document.getElementById("fname").value.trim();
+    let lname = document.getElementById("lname").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let confirm = document.getElementById("confirm").value.trim();
+
+    if (fname === "" || lname === "" || email === "" || password === "" || confirm === "") {
+        alert("All fields are required");
+        return;
+    }
+
+    if (password !== confirm) {
+        alert("Password and Confirm Password must be same");
+        return;
+    }
+
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+
+    alert("Account created successfully!");
+
+    window.location.href = "selection.html";
+}
+</script>
+
+</body>
+</html>
