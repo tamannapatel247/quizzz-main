@@ -49,7 +49,7 @@
         <circle class="bg"></circle>
         <circle class="progress"></circle>
       </svg>
-      <span class="time-text">30s</span>
+      <span class="time-text">10s</span>
     </div>
   </div>
 
@@ -91,6 +91,52 @@
 </div>
 
 </body>
+
+<script>
+let timePerQuestion = 10; // change dynamically if needed
+let timer;
+let timeLeft = timePerQuestion;
+</script>
+
+<script>
+function startTimer() {
+  
+  clearInterval(timer); // reset previous timer
+  timeLeft = timePerQuestion;
+
+
+  timer = setInterval(() => {
+    timeLeft--;
+
+    document.querySelector(".time-text").innerText = timeLeft + "s";
+
+      let offset = circumference - (timeLeft / timePerQuestion) * circumference;
+  circle.style.strokeDashoffset = offset;
+
+  //Color-change
+  circle.style.color = "#22c55e"; // default green
+  if (timeLeft <= 3) {
+  circle.style.color = "#ef4444"; // red
+} else if (timeLeft <= 5) {
+  circle.style.color = "#f59e0b"; // orange
+} else {
+  circle.style.color = "#22c55e"; // green
+}
+  
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+
+      // Auto move to next question OR submit
+      if (currentIndex < questions.length - 1) {
+        nextQuestion();
+      } else {
+        submitQuiz();
+      }
+    }
+  }, 1000);
+}
+</script>
+
 <script>
 const questions = [
   {
@@ -129,16 +175,18 @@ let currentIndex = 0;
 let userAnswers = new Array(questions.length).fill(null);
 
 function loadQuestion() {
+  circle.style.strokeDashoffset = circumference; 
+  startTimer(); //timer
  document.querySelectorAll(".option").forEach(opt => {
   opt.classList.remove("correct", "wrong");
 });
 
-document.querySelectorAll(".option input").forEach(r => {
-  r.disabled = true;
-});
-document.querySelectorAll(".option input").forEach(r => {
-  r.disabled = false;
-});
+// document.querySelectorAll(".option input").forEach(r => {
+//   r.disabled = true;
+// });
+// document.querySelectorAll(".option input").forEach(r => {
+//   r.disabled = false;
+// });
 
 
   const q = questions[currentIndex];
@@ -209,20 +257,22 @@ function submitQuiz() {
 
 }
 
-window.onload = function () {
-  loadQuestion();
-
-  document.querySelectorAll(".option input").forEach((radio, index) => {
-    radio.addEventListener("change", () => {
-      userAnswers[currentIndex] = index;
-    });
-  });
-};
 </script>
 
+<script>
+let circle;
+let circumference;
+</script>
 
 <script>
 window.onload = function () {
+circle = document.querySelector(".progress");
+const radius = 26;
+circumference = 2 * Math.PI * radius;
+
+circle.style.strokeDasharray = circumference;
+circle.style.strokeDashoffset = circumference;
+
   loadQuestion();
 
   document.querySelectorAll(".option input").forEach((radio, index) => {
